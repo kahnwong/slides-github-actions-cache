@@ -1,14 +1,12 @@
 ---
 theme: apple-basic
 colorSchema: light
----
----
 layout: intro
 ---
 
 # Reduce deployments runtime with GitHub Actions Cache
 
-Here's to incremental deployments 🥂.
+Here's to incremental deployments.
 
 ---
 
@@ -222,9 +220,8 @@ If we deploy 150 times / month
 In total, we can save 67.5m and 4.4 USD per month.
 
 ---
-layout: center
----
 
 # Check out the slides and repo!
 
 
+![](images/qrcode.png)
