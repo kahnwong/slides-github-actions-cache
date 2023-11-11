@@ -1,0 +1,18 @@
+{
+    "name": "slides-github-actions-cache",
+    "private": true,
+    "scripts": {
+        "build": "slidev build",
+        "dev": "slidev --open",
+        "export": "slidev export"
+    },
+    "dependencies": {
+        "@slidev/cli": "^0.42.7",
+        "@slidev/theme-default": "*",
+        "@slidev/theme-apple-basic": "*"
+    },
+    "devDependencies": {
+        "@iconify-json/logos": "^1.1.34",
+        "playwright-chromium": "^1.25.2"
+    }
+}
