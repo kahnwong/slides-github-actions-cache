@@ -126,7 +126,7 @@ layout: two-cols
 
 # Buildx with Cache
 
-![](images/build-with-cache.png) 
+![](images/build-with-cache.png)
 
 
 ---
@@ -204,6 +204,12 @@ layout: two-cols
 layout: center
 ---
 
+# Any questions?
+
+---
+layout: center
+---
+
 # Ready for cost reduction?
 
 If we deploy 150 times / month
@@ -212,14 +218,31 @@ If we deploy 150 times / month
 
 # Cost breakdown
 
-|Type|Actions Runtime|Image storage|AWS ECR Cost|
-|-|-|-|-|
-|No cache|3m24s * 150 = 510m|450MB * 150 = 66GB|66GB * 0.10 USD = 6.6 USD|
-|With cache|2m57s * 150 = 442.5m|150MB * 150 = 22GB|22GB * 0.10 USD = 2.2 USD|
+| Service                  | No Cache           | With Cache           |
+| ------------------------ | ------------------ | -------------------- |
+| GitHub Actions (Runtime) | 3m24s * 150 = 510m | 2m57s * 150 = 442.5m |
 
-In total, we can save 67.5m and 4.4 USD per month.
+<br>
+
+| Service       | Normal Build       | Multi-Stage Build         |
+| ------------- | ------------------ | ------------------------- |
+| ECR (Storage) | 450MB * 150 = 66GB | 150MB * 150 = 22GB        |
+| ECR (Cost)    | 150MB * 150 = 22GB | 22GB * 0.10 USD = 2.2 USD |
+
+<br>
+
+In total, we can save **67.5 minutes** and **4.4 USD** per month.
 
 ---
+
+# I know you love pretty charts
+
+<br>
+
+![](images/chart.png)
+
+---
+
 
 # Check out the slides and repo!
 
