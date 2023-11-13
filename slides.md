@@ -4,7 +4,7 @@ colorSchema: light
 layout: intro
 ---
 
-# Reduce deployments runtime with GitHub Actions Cache
+# Faster deployments with multi-stage build caching
 
 Here's to incremental deployments.
 
