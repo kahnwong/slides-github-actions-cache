@@ -12,7 +12,7 @@ Here's to incremental deployments.
 
 <!-- copied from <https://raw.githubusercontent.com/MiryangJung/2022-feconf-slides-rescript-together/main/slides.md> -->
 
-# About Me
+# About me
 
 <div class="flex mt-10">
   <div class="flex flex-col mr-200px">
@@ -40,20 +40,14 @@ Here's to incremental deployments.
 ---
 layout: center
 ---
-# CI/CD Workflow
+# CI/CD workflow
 
-![](images/deployment-workflow.png)
+![](images/cicd-workflow.png)
 
 
----
-
-# CI/CD Breakdown
-
-- Image build
-- Image push
-- Image pull (during deployment)
 
 ---
+
 
 # Dockerfile
 
@@ -98,7 +92,7 @@ layout: center
 
 ---
 
-# GitHub Actions Buildx with Cache
+# GitHub Actions Buildx with cache
 
 ```yaml
 - name: Build and tag image
@@ -124,10 +118,21 @@ layout: two-cols
 
 ::right::
 
-# Buildx with Cache
+# Buildx with cache
 
 ![](images/build-with-cache.png)
 
+
+---
+layout: center
+---
+# How do we know that we're using cache?
+
+---
+
+# Check GitHub Actions caches from all workflows
+
+![](images/gh-cache.png)
 
 ---
 layout: center
@@ -243,6 +248,43 @@ In total, we can save **67.5 minutes** and **4.4 USD** per month.
 
 ---
 
+# GitHub Actions Cache can also be used with runtimes
+
+
+```yaml
+steps:
+- uses: actions/checkout@v4
+- uses: actions/setup-node@v4
+  with:
+    node-version: 18
+    cache: 'yarn'
+- run: yarn install
+- run: yarn build
+```
+
+---
+
+# Let's revisit CI/CD workflow again
+
+
+![](images/cicd-workflow-revisit.png)
+
+---
+layout: center
+---
+
+# Any questions?
+
+---
+
+# Summary
+
+- GitHub Actions cache can be used with docker image build and setup actions
+- Multi-stage build can drastically reduce image size (in turn, reducing image storage cost)
+- These lead to faster CI/CD run time and faster deployments
+- During PR review, automated checks can be done faster as well
+
+---
 
 # Check out the slides and repo!
 
