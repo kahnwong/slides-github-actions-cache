@@ -34,6 +34,7 @@ Here's to incremental deployments.
     <li class="my-3">Head of Platform Engineering @Baania</li>
     <li class="my-3">Often known as DevSecMLFinDataOps</li>
     <li class="my-3">Faster deployments -> Faster iterations</li>
+    <li class="my-3">I love automation</li>
   </ul>
 </div>
 
@@ -170,6 +171,14 @@ COPY --from=builder /opt/build/package.json ./
 EXPOSE 3000
 CMD [ "yarn", "start", "-H", "0.0.0.0" ]
 ```
+
+---
+
+# Why multi-stage build?
+
+- `yarn build` creates a lot of temporary files
+- We don't need those "temporary files" for `yarn start`
+
 
 ---
 layout: center
